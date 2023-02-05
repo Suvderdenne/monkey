@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main{
+        width: 100%;
+        height:800px;
+        background-image: url("back.jpg");
+        background-repeat: no-repeat;
+    }
+    #banana1{
+        width: 100px;
+        margin-top: 30px;
+        margin-left: 70%;
+        float: left;
+    }
+   #banana2{
+    width: 100px;
+    margin-top: 35px;
+    position: absolute;
+   }
+
+   #m1{
+    width: 200px;
+    border-radius: 50px;
+    margin-top: 470px;
+    margin-left: -200px;
+    float: left;
+   }
+   #m2{
+    width: 200px;
+    margin-top: 470px;
+    border-radius: 50px;
+    float: left;
+   }
+</style>
+<body>
+    <input onkeypress="monk(event)" type="text" style="margin: 10px ; margin-left: 500px;">
+    <div class="main">
+        <img id="banana1" src="banana.png">
+        <img id="banana2" src="banana 2.png">
+       
+       <div>
+        <img id="m1" src="monkey.png">
+        <img id="m2" src="monkey2.png">
+       </div> 
+
+    </div>
+    <script>
+        let mon1=470;
+        let mon2=470;
+        let monkey1=document.getElementById('m1');
+        let monkey2=document.getElementById('m2');
+        function monk(event){
+            let e=event.which;
+            // s=115, k=107
+            if (e==115){
+                mon1-=20;
+                document.getElementById('m1').style.marginTop=mon1+"px";
+            }
+            if(e==107){
+                mon2-=20;
+                document.getElementById('m2').style.marginTop=mon2+"px";
+            }
+            if(mon1<66){
+                alert('Сармагчин 1 хожлоо')
+            }
+            if(mon2<66){
+                alert('Сармагчин 2 хожлоо')
+            }
+        }
+
+    </script>
+</body>
+</html>
